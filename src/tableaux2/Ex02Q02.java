@@ -1,16 +1,21 @@
-package tableau2;
+package tableaux2;
 
 import java.util.Scanner;
 
-public class Ex02Q01 {
+public class Ex02Q02 {
 
-	public static void affichage(int[] tab)
+	public static int plusGrand(int[] tab)
 	{
+		int grand;
+		grand = tab[0];
 		for(int i = 0; i < tab.length; i++)
 		{
-			System.out.println(tab[i] + " ");
+			if(grand < tab[i])
+			{
+				grand = tab[i];
+			}
 		}
-		System.out.print("\n");
+		return grand;
 	}
 	
 	public static void main(String[] args) {
@@ -21,7 +26,7 @@ public class Ex02Q01 {
 			System.out.println("entrez un nombre");
 			tabInt[i] = scan.nextInt();
 		}
-		affichage(tabInt);
+		System.out.println(plusGrand(tabInt));
 	}
 
 }

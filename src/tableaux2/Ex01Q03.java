@@ -1,20 +1,20 @@
-package tableau2;
+package tableaux2;
 
 import java.util.Scanner;
 
-public class Ex01Q02 {
+public class Ex01Q03 {
 
+	
 	public static int nbIndex(int[] tab, int compare)
 	{
-		int index = -1;
 		for (int i = 0; i < tab.length; i++)
 		{
 			if(compare == tab[i])
 			{
-				index = i;
+				return i;
 			}
 		}
-		return index;
+		return -1;
 	}
 	
 	public static void main(String[] args) {
@@ -28,5 +28,4 @@ public class Ex01Q02 {
 			System.out.println(index);
 		}
 	}
-
 }

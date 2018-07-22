@@ -1,20 +1,19 @@
-package tableau2;
+package tableaux2;
 
 import java.util.Scanner;
 
-public class Ex01Q03 {
+public class Ex01Q01 {
 
-	
-	public static int nbIndex(int[] tab, int compare)
+	public static boolean isHere(int[] tab, int compare)
 	{
-		for (int i = 0; i < tab.length; i++)
+		for(int i = 0; i < tab.length; i++)
 		{
 			if(compare == tab[i])
 			{
-				return i;
+				return true;
 			}
 		}
-		return -1;
+		return false;
 	}
 	
 	public static void main(String[] args) {
@@ -22,10 +21,14 @@ public class Ex01Q03 {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("entrez un chiffre");
 		int compare = scan.nextInt();
-		int index = nbIndex(tab, compare);
-		if(index != -1)
+		if(isHere(tab, compare))
 		{
-			System.out.println(index);
+			System.out.println("oui");
+		}
+		else
+		{
+			System.out.println("non");
 		}
 	}
+
 }

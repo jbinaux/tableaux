@@ -1,4 +1,4 @@
-package tableau2;
+package tableaux2;
 
 import java.util.Scanner;
 
