@@ -14,7 +14,10 @@ public class Ex02Q05 {
 			System.out.println("entrez une lettre");
 			tab[i] = scan.next().charAt(0);
 		}
-
+		for(int i = 0; i < tab.length; i++)
+		{
+			System.out.print(tab[i] + " ");
+		}
 	}
 
 }
