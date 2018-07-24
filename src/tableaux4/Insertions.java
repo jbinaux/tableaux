@@ -4,21 +4,22 @@ import java.util.Scanner;
 
 public class Insertions {
 
-	public static void main(String[] args) {
-		char[] tab = {'x', 'r', 'l', 'b'};
+	public static char[] truc(char[] tab)
+	{
 		char[] tabNew;
 		char[] tabInsert;
-		Scanner scan = new Scanner(System.in);
 		int n;
 		int i;
 		int l = 0;
+		Scanner scan = new Scanner(System.in);
+		
 		
 		System.out.println("entrez un nombre de caracteres");
 		n = scan.nextInt();
 		System.out.println("entrez un indice");
 		i = scan.nextInt();
 		tabInsert = new char[n];
-		tabNew = new char[n + 4];
+		tabNew = new char[n + tab.length];
 		for(int j = 0; j < n; j++)
 		{
 			System.out.println("entrez un caractere");
@@ -26,7 +27,7 @@ public class Insertions {
 		}
 		for(int j = 0; j < tabNew.length; j++)
 		{
-			if(j == i && i < 4)
+			if(j == i && i < tab.length)
 			{
 				for(int k = 0; k < n; k++)
 				{
@@ -34,7 +35,7 @@ public class Insertions {
 					j++;
 				}
 			}
-			else if(i > 4 && j == 4)
+			else if(i > tab.length && j == tab.length)
 			{
 				for(int k = 0; k < n; k++)
 				{
@@ -42,7 +43,7 @@ public class Insertions {
 					j++;
 				}
 			}
-			if(l < 4)
+			if(l < tab.length)
 			{
 				tabNew[j] = tab[l];
 				l++;
@@ -51,6 +52,33 @@ public class Insertions {
 		for(int j = 0; j < tabNew.length; j++)
 		{
 			System.out.print(tabNew[j] + " ");
+		}
+		return tabNew;
+	}
+	
+	public static void main(String[] args) {
+		char[] tab;
+		char[] init = {'x','r','l','b'};
+		char c;
+		Scanner scan = new Scanner(System.in);
+		
+		tab = truc(init);
+		while(true) 
+		{
+			System.out.println("\nVoulez vous continuer ? Y/N");
+			c = scan.next().charAt(0);
+			while(c != 'y' && c != 'Y' && c != 'n' && c != 'N') 
+			{
+				c = scan.next().charAt(0);
+			}
+			if(c == 'n' || c == 'N')
+			{
+				break;
+			}
+			else
+			{
+				tab = truc(tab);
+			}
 		}
 	}
 
